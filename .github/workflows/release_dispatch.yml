@@ -1,4 +1,4 @@
-name: release dispatch
+name: release on dispatch
 
 concurrency:
   group: build-${{ github.head_ref }}
@@ -42,7 +42,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: ${{ github.ref }}
-        release_name: WasmEdge ${{ github.ref }}
+        release_name: LLVM with Clang - ${{ github.ref }}
         draft: true
         prerelease: true
 
@@ -54,4 +54,3 @@ jobs:
         upload_url: ${{ needs.create_release.outputs.upload_url }}
         asset_path: build/LLVM-*-win64.zip
         asset_content_type: application/zip
-
