@@ -4,7 +4,7 @@ concurrency:
   group: build-${{ github.head_ref }}
   cancel-in-progress: true
 
-on: [workflow_disptach]
+on: [workflow_dispatch]
 
 jobs:
   create_release:
