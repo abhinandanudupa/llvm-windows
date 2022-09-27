@@ -4,15 +4,7 @@ concurrency:
   group: build-${{ github.head_ref }}
   cancel-in-progress: true
 
-on:
-  push:
-    branches:
-      - main
-    tags-ignore:
-      - llvmorg-*
-  pull_request:
-    branches:
-      - main
+on: [workflow_dispatch]
 
 jobs:
   build:
